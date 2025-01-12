@@ -23,4 +23,4 @@ jobs:
       - name: Update social preview
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: node octokit-repo-update-social-preview.js
+        run: node octokit-repo-update-social-preview.mjs
