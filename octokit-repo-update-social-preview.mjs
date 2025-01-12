@@ -17,16 +17,20 @@ const pathToImage = "assets/social-preview.png"; // Chemin vers l'image de l'ape
 async function updateSocialPreview() {
   const image = fs.readFileSync(pathToImage);
 
-  await octokit.request('PATCH /repos/{owner}/{repo}/social_preview', {
-    owner,
-    repo,
-    mediaType: {
-      previews: ['scarlet-witch']
-    },
-    data: image
-  });
+  try {
+    await octokit.request('PATCH /repos/{owner}/{repo}/social_preview', {
+      owner,
+      repo,
+      mediaType: {
+        previews: ['scarlet-witch']
+      },
+      data: image
+    });
 
-  console.log("Social preview updated successfully!");
+    console.log("Social preview updated successfully!");
+  } catch (error) {
+    console.error("Error updating social preview:", error);
+  }
 }
 
 updateSocialPreview().catch(err => {
