@@ -11,7 +11,7 @@ const octokit = new Octokit({
 });
 
 const owner = "doustpst"; // Remplacez par votre nom d'utilisateur GitHub
-const repo = "douxxu"; // Remplacez par le nom de votre dépôt
+const repo = "test"; // Remplacez par le nom de votre dépôt
 const pathToImage = "assets/social-preview.png"; // Chemin vers l'image de l'aperçu social
 
 async function updateSocialPreview() {
